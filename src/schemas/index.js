@@ -17,6 +17,13 @@ export const loginSchema = z.object({
   }),
 });
 
+export const updateUserSchema = z.object({
+  body: z.object({
+    name: z.string().optional(),
+    role: z.enum(['ADMIN', 'CUSTOMER']).optional(),
+  }),
+});
+
 // Product Schemas
 export const createProductSchema = z.object({
   body: z.object({

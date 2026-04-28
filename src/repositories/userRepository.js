@@ -17,3 +17,23 @@ export const findUserById = async (id) => {
     where: { id },
   });
 };
+
+export const getAllUsers = async () => {
+  return await prisma.user.findMany({
+    select: { id: true, email: true, name: true, role: true, createdAt: true },
+  });
+};
+
+export const updateUser = async (id, data) => {
+  return await prisma.user.update({
+    where: { id },
+    data,
+    select: { id: true, email: true, name: true, role: true, createdAt: true },
+  });
+};
+
+export const deleteUser = async (id) => {
+  return await prisma.user.delete({
+    where: { id },
+  });
+};
