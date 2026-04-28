@@ -12,6 +12,6 @@ services:
       - key: JWT_SECRET
         generateValue: true
 
-  - type: psql
-    name: final-project-db
+databases:
+  - name: final-project-db
     plan: free
