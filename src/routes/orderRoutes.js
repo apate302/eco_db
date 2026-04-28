@@ -121,6 +121,8 @@ router.post('/', verifyToken, validate(createOrderSchema), orderController.creat
  *         description: Order status updated
  *       400:
  *         description: Validation error
+ *       401:
+ *         description: Unauthorized
  *       403:
  *         description: Forbidden
  *       404:
@@ -145,6 +147,8 @@ router.put('/:id', verifyToken, requireAdmin, validate(updateOrderStatusSchema),
  *     responses:
  *       204:
  *         description: Order deleted
+ *       401:
+ *         description: Unauthorized
  *       403:
  *         description: Forbidden
  *       404:

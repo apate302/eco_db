@@ -129,6 +129,10 @@ router.post('/', verifyToken, validate(createReviewSchema), reviewController.cre
  *     responses:
  *       200:
  *         description: Review updated
+ *       400:
+ *         description: Bad Request
+ *       401:
+ *         description: Unauthorized
  *       403:
  *         description: Forbidden (Not owner)
  *       404:
@@ -153,6 +157,8 @@ router.put('/:id', verifyToken, validate(updateReviewSchema), reviewController.u
  *     responses:
  *       204:
  *         description: Review deleted
+ *       401:
+ *         description: Unauthorized
  *       403:
  *         description: Forbidden (Not owner/admin)
  *       404:

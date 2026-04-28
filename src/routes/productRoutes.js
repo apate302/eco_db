@@ -33,6 +33,8 @@ router.get('/', productController.getProducts);
  *     responses:
  *       200:
  *         description: Product data
+ *       400:
+ *         description: Bad Request
  *       404:
  *         description: Product not found
  */
@@ -109,6 +111,12 @@ router.post('/', verifyToken, requireAdmin, validate(createProductSchema), produ
  *     responses:
  *       200:
  *         description: Product updated
+ *       400:
+ *         description: Bad Request
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden
  *       404:
  *         description: Product not found
  */
@@ -131,6 +139,10 @@ router.put('/:id', verifyToken, requireAdmin, validate(updateProductSchema), pro
  *     responses:
  *       204:
  *         description: Product deleted
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden
  *       404:
  *         description: Product not found
  */
