@@ -29,7 +29,7 @@ router.get('/', productController.getProducts);
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       200:
  *         description: Product data
@@ -90,7 +90,7 @@ router.post('/', verifyToken, requireAdmin, validate(createProductSchema), produ
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -127,7 +127,7 @@ router.put('/:id', verifyToken, requireAdmin, validate(updateProductSchema), pro
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       204:
  *         description: Product deleted

@@ -29,7 +29,7 @@ router.get('/', reviewController.getAllReviews);
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       200:
  *         description: Review details
@@ -49,7 +49,7 @@ router.get('/:id', reviewController.getReviewById);
  *         name: productId
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       200:
  *         description: List of reviews
@@ -112,7 +112,7 @@ router.post('/', verifyToken, validate(createReviewSchema), reviewController.cre
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -149,7 +149,7 @@ router.put('/:id', verifyToken, validate(updateReviewSchema), reviewController.u
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       204:
  *         description: Review deleted

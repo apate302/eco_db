@@ -35,7 +35,7 @@ router.get('/', verifyToken, orderController.getOrders);
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       200:
  *         description: Order details
@@ -103,7 +103,7 @@ router.post('/', verifyToken, validate(createOrderSchema), orderController.creat
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -141,7 +141,7 @@ router.put('/:id', verifyToken, requireAdmin, validate(updateOrderStatusSchema),
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *     responses:
  *       204:
  *         description: Order deleted
