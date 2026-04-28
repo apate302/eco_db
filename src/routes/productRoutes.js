@@ -139,6 +139,8 @@ router.put('/:id', verifyToken, requireAdmin, validate(updateProductSchema), pro
  *     responses:
  *       204:
  *         description: Product deleted
+ *       400:
+ *         description: Bad Request
  *       401:
  *         description: Unauthorized
  *       403:

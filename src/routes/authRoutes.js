@@ -63,6 +63,8 @@ router.post('/register', validate(registerSchema), authController.register);
  *     responses:
  *       200:
  *         description: Login successful
+ *       400:
+ *         description: Validation error
  *       401:
  *         description: Invalid credentials
  */

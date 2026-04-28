@@ -157,6 +157,8 @@ router.put('/:id', verifyToken, validate(updateReviewSchema), reviewController.u
  *     responses:
  *       204:
  *         description: Review deleted
+ *       400:
+ *         description: Bad Request
  *       401:
  *         description: Unauthorized
  *       403:
